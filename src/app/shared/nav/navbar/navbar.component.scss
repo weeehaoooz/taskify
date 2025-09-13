@@ -1,0 +1,35 @@
+@use "colors" as *;
+@use "defaults" as *;
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: .5em 1em;
+    background-color: $white-color;
+    box-shadow: $box-shadow;
+    
+    .nav__container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 1em;
+   
+        &.left__container, &.right__container {
+            width: 15em;
+        }
+
+        &.search__container {
+            flex:1;
+            max-width: 800px;
+        }
+    }
+
+    .center__container {
+        tsk-search-bar {
+            min-width: 20em;
+        }
+    }
+
+}

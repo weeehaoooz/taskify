@@ -1,0 +1,11 @@
+<div class="dashboard__wrapper">
+    <div class="dashboard__toolbar"></div>
+    <div class="swimlanes__container">
+        @for (swimlane of swimlanes(); track $index) {
+            <tsk-swimlane 
+                [swimlane]="swimlane"
+                [connectedTo]="connectedIds(swimlane.id)">
+            </tsk-swimlane>
+        }
+    </div>
+</div>

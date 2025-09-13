@@ -1,0 +1,20 @@
+<div class="swimlane__container">
+    <div class="swimlane__header">
+        <h3>{{swimlane()?.title | titlecase}}</h3>
+    </div>
+    <div class="tasks__container"
+        [id]="swimlane()?.id ?? 'Swimlane'"
+        cdkDropList
+        [cdkDropListData]="tasks()"
+        [cdkDropListConnectedTo]="connectedTo()"
+        (cdkDropListDropped)="drop($event)"
+        >
+        @for (task of tasks(); track $index ) {
+            <tsk-task-card 
+                [task]="task" 
+                [class.last]="$index == $count - 1"
+                cdkDrag>
+            </tsk-task-card>
+        }
+    </div>
+</div>

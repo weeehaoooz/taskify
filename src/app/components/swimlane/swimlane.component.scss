@@ -1,0 +1,62 @@
+@use "colors" as *;
+@use "defaults" as *;
+
+.swimlane__container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex: 1;
+    min-width: 350px;
+    height: calc(100% - 1em);
+    padding: .5em;
+    border: $border;
+
+    .swimlane__header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;    
+        padding: .5em;
+        
+
+        h3 {
+            padding: 0;
+            margin: 0;
+            color: $primary-color;
+        }
+    }
+
+    .tasks__container {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+
+        tsk-task-card.cdk-drag {
+            cursor: grab;
+            transition: transform 0.2s ease;
+        }
+
+        tsk-task-card.cdk-drag-dragging {
+            opacity: 0.7;
+            cursor: grabbing;
+            transform: rotate(2deg); // nice little effect
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+
+        .cdk-drag-placeholder {
+            opacity: 0.3;
+            border: 2px dashed #999;
+            min-height: 60px; // keeps space while dragging
+        }
+
+        .cdk-drag-preview {
+            border: 1px solid #666;
+            background: white;
+            padding: 8px;
+            border-radius: 6px;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+        }
+    }
+
+    
+}

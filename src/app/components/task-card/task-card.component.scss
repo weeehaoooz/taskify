@@ -1,0 +1,21 @@
+@use "colors" as *;
+@use "defaults" as *;
+
+
+.task__card { 
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    background-color: $white-color;
+    padding: 1em;
+    border: $border;
+    border-bottom: 1px solid transparent;    
+}
+
+:host(.cdk-drag-preview) .task__card {
+    border-bottom: $border;
+}
+
+:host(.last) .task__card {
+  border-bottom: $border !important;
+}
