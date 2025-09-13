@@ -1,3 +1,4 @@
+@use "sass:color";
 @use "colors" as *;
 @use "defaults" as *;
 
@@ -8,7 +9,9 @@
     flex: 1;
     min-width: 350px;
     height: calc(100% - 1em);
-    padding: .5em;
+    padding: 0 .5em;
+    background-color: $off-white-color;
+    border-radius: .2em;
     border: $border;
 
     .swimlane__header {
@@ -16,13 +19,18 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: center;    
-        padding: .5em;
-        
+        padding: .8em .5em;
 
         h3 {
             padding: 0;
             margin: 0;
-            color: $primary-color;
+            color: $black-color;
+        }
+
+        .button__container {
+            display: flex;
+            flex-direction: row;
+            gap: .5em; 
         }
     }
 
@@ -30,9 +38,30 @@
         display: flex;
         flex-direction: column;
         flex: 1;
+        gap: .2em;
+
+        .create-task__card {
+            display: flex;
+            flex-direction: column;
+            padding: .8em .5em;
+            border-radius: .2em;
+            border: $border;
+            background-color: $white-color;
+
+            form {
+                display: flex;
+                flex-direction: column;
+                gap: .5em;
+
+                input[type="text"] {
+                    padding: .5em;
+                    border: $border;
+                    border-radius: .2em;
+                }
+            }
+        }
 
         tsk-task-card.cdk-drag {
-            cursor: grab;
             transition: transform 0.2s ease;
         }
 
@@ -56,7 +85,5 @@
             border-radius: 6px;
             box-shadow: 0 6px 16px rgba(0,0,0,0.25);
         }
-    }
-
-    
+    }    
 }

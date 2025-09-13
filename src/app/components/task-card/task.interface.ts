@@ -16,7 +16,9 @@ export enum ITaskStatusEnum {
 }
 
 export enum ITaskPriorityEnum {
+    MINIMAL = 'MINIMAL',
     LOW = 'LOW',
     MEDIUM = 'MEDIUM',
-    HIGH = 'HIGH'
+    HIGH = 'HIGH',
+    CRITICAL = 'CRITICAL'
 }

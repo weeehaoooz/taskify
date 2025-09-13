@@ -1,9 +1,19 @@
-$primary-color: #279AF1;
+@use "sass:color";
+
+$primary-color: #2A99F4;
 $secondary-color: #E9E9E9;
 
-$black-color: #1F1F1F;
-$white-color: #FAFDFF;
-$grey-color: #C4C4C4;
+$black-color: #333333;
+$white-color: #FFFFFF;
+$off-white-color: #fdfcfc;
+$grey-color: #C1C1C1;
 
-$green-color: #D2D8B3;
-$green-color: #4C8577;
+
+$priority-critical: #FF8A8A;
+$priority-high: #FFB3B3;
+$priority-medium: #E0CCFF;
+$priority-low: #B3B3FF;
+$priority-minimal: #B3D1FF;
+ 
+
+$border-color: color.adjust($grey-color, $lightness: 15%);

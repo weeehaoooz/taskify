@@ -5,17 +5,74 @@
 .task__card { 
     display: flex;
     flex-direction: column;
-    gap: 1em;
     background-color: $white-color;
-    padding: 1em;
+    padding: .8em;
     border: $border;
-    border-bottom: 1px solid transparent;    
+    gap: .5em;
+    border-radius: .2em;
+
+    .task__header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+
+        h3 {
+            padding: 0;
+            margin: 0;
+        }
+
+        .priority__icon {
+            display: block;
+            width: 1em;
+            aspect-ratio: 1/1;
+            border-radius: 50%;
+            background-color: $primary-color;
+
+            &.critical {
+                background-color: $priority-critical;
+            }
+
+            &.high {
+                background-color: $priority-high;
+            }
+
+            &.medium {
+                background-color: $priority-medium;
+            }
+
+            &.low {
+                background-color: $priority-low;
+            }
+
+            &.minimal {
+                background-color: $priority-minimal;
+            }
+        }
+    }
+
+    .task__body {
+        padding: 0;
+        margin: 0;
+
+        p {
+          font-size: .9em;
+        }
+    }
+
+    .task__footer {
+      p {
+        font-size: 1em;
+      }
+    }
 }
 
-:host(.cdk-drag-preview) .task__card {
-    border-bottom: $border;
-}
+// :host(.cdk-drag-preview) .task__card {
+//     border-bottom: $border;
+// }
 
-:host(.last) .task__card {
-  border-bottom: $border !important;
-}
+// :host(.last) .task__card {
+//   border-bottom: $border !important;
+// }

@@ -1,6 +1,14 @@
 <div class="swimlane__container">
     <div class="swimlane__header">
         <h3>{{swimlane()?.title | titlecase}}</h3>
+        <div class="button__container">
+            <button class=tsk-icon__btn>
+                <mat-icon>sort</mat-icon>
+            </button>
+            <button class=tsk-icon__btn>
+                <mat-icon>add</mat-icon>
+            </button>
+        </div>
     </div>
     <div class="tasks__container"
         [id]="swimlane()?.id ?? 'Swimlane'"
@@ -9,6 +17,20 @@
         [cdkDropListConnectedTo]="connectedTo()"
         (cdkDropListDropped)="drop($event)"
         >
+        <div class="create-task__card">
+            <form>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Task</mat-label>
+                    <input matInput #message maxlength="256" placeholder="task">
+                    <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
+                </mat-form-field>
+                <mat-form-field class="example-full-width" subscriptSizing="dynamic">
+                    <mat-label>Description</mat-label>
+                    <textarea matInput placeholder="describe the task"></textarea>
+                </mat-form-field>
+                <button matButton="tonal" color="primary">okay</button>
+            </form>
+        </div>
         @for (task of tasks(); track $index ) {
             <tsk-task-card 
                 [task]="task" 

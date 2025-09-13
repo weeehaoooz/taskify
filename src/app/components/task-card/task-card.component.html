@@ -1,5 +1,14 @@
 <div class="task__card">
     <div class="task__header">
         <h3>{{task()?.title | titlecase}}</h3>
+        <div class="priority__icon" [ngClass]="task()?.priority | lowercase"></div>
+    </div>
+    <div class="task__body">
+        <p>
+            {{task()?.description}}
+        </p>
+    </div>
+    <div class="task__footer">
+        <a>{{task()?.id}}</a>
     </div>
 </div>

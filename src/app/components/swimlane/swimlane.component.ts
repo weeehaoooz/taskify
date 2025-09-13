@@ -5,13 +5,23 @@ import { TaskCardComponent } from '../task-card/task-card.component';
 import { ISwimlane } from './swimlane.interface';
 import { TitleCasePipe } from '@angular/common';
 import { CdkDragDrop, DragDropModule, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 @Component({
   selector: 'tsk-swimlane',
   imports: [
     TaskCardComponent,
     TitleCasePipe,
-    DragDropModule
+    DragDropModule,
+    MatIconModule,
+    MatButtonModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   templateUrl: './swimlane.component.html',
   styleUrl: './swimlane.component.scss'

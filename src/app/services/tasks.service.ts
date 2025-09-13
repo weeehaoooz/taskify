@@ -11,7 +11,7 @@ export class TasksService {
   constructor() {
     const sampleTasks = [
       {
-        id: "1",
+        id: "TSK-1",
         title: 'Task 1',
         description: 'Description 1',
         status: ITaskStatusEnum.TODO,
@@ -21,7 +21,7 @@ export class TasksService {
         deleted_at: null
       },
       {
-        id: "2",
+        id: "TSK-2",
         title: 'Task 2',
         description: 'Description 2',
         status: ITaskStatusEnum.IN_PROGRESS,
@@ -31,7 +31,7 @@ export class TasksService {
         deleted_at: null
       },
       {
-        id: "3",
+        id: "TSK-3",
         title: 'Task 3',
         description: 'Description 3',
         status: ITaskStatusEnum.DONE,
@@ -41,7 +41,7 @@ export class TasksService {
         deleted_at: null
       },
       {
-        id: "4",
+        id: "TSK-4",
         title: 'Task 4',
         description: 'Description 4',
         status: ITaskStatusEnum.TODO,
@@ -51,7 +51,7 @@ export class TasksService {
         deleted_at: null
       },
       {
-        id: "5",
+        id: "TSK-5",
         title: 'Task 5',
         description: 'Description 5',
         status: ITaskStatusEnum.IN_PROGRESS,
@@ -61,7 +61,7 @@ export class TasksService {
         deleted_at: null
       },
       {
-        id: "6",
+        id: "TSK-6",
         title: 'Task 6',
         description: 'Description 6',
         status: ITaskStatusEnum.TODO,
