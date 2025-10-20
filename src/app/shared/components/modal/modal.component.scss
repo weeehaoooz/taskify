@@ -1,0 +1,58 @@
+@use "colors" as *;
+@use "defaults" as *;
+
+.modal__wrapper {
+    position: fixed;
+    display: grid;
+    place-items: center;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    
+    .backdrop {
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.7);
+        opacity: .8;
+    }
+
+    .modal {
+        position: relative;
+        display: grid;
+        place-items: center;
+        background-color: $white-color;
+        border-radius: .5em;
+        border: $border;
+        max-height: 85vh;
+        width: auto;
+        overflow-y: auto;
+        overflow-x: auto;
+
+        &.full {
+            width: 100vw;
+            height: 100vh;
+            max-height: none;
+            padding-top: 1.5em;
+            border-radius: 0;
+            border: 0;
+
+            .close-btn {
+                transform: scale(1);
+            }
+        }
+    }
+
+    .close-btn {
+        position: absolute;
+        top: 1em;
+        right: 1em;
+        transform: scale(1.2);
+        z-index: 2;
+        cursor: pointer;
+    }
+}

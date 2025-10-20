@@ -3,22 +3,26 @@
 
 $border: 1px solid $border-color;
 $border-radius: 8px;
-$box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+$box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+$box-shadow-hover: 0 2px 6px rgba(0,0,0,0.1);
 
+$hover-grey: color.adjust($grey-color, $lightness: 40%);
 
 .tsk-icon__btn {
     display: grid;
     place-items: center;
     border: none;
-    background-color: transparent;
     cursor: pointer;
     border-radius: 50%;
-    width: 2.2em;
-    height: 2.2em;
+    width: 2.1em;
+    height: 2.1em;
     padding: 0;
-    transition: background-color .1s ease-in-out;
+    color: $black-color;
+
+    background-color: rgba($hover-grey, 0);
+    transition: background-color .1s ease-in-out, opacity .1s ease-in-out;
 
     &:hover {
-        background-color: color.adjust($grey-color, $lightness: 15%);
+        background-color: rgba($hover-grey, 9);
     }
 }

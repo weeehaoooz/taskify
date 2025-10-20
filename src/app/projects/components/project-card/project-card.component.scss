@@ -1,0 +1,96 @@
+@use "colors" as *;
+@use "defaults" as *;
+
+.project__card {
+    border: 1px solid $border-color;
+    border-radius: 12px;
+    padding: 1rem;
+    background: $white-color;
+    //   box-shadow:
+    box-shadow: $box-shadow;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    cursor: pointer;
+    transition: .2s ease-in-out;
+
+    .project__header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        h3 {
+            margin: 0;
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        p {
+            margin: 0.25rem 0 0;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .tsk-icon__btn {
+            opacity: 0; // s
+            transition: opacity 0.3s ease; // sm
+        }
+    }
+
+
+    &:hover {
+        box-shadow: $box-shadow-hover;
+
+        .project__header {
+            .tsk-icon__btn {
+                opacity: 1;
+            }
+        }
+    }
+
+    .summary {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0.75rem;
+
+        .stat {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .label {
+                font-size: 0.75rem;
+                color: $grey-color;
+            }
+
+            .value {
+                font-size: 1.1rem;
+                font-weight: 600;
+            }
+        }
+
+        .high-priority .value {
+            color: $priority-critical; // red for emphasis
+        }
+    }
+
+    .progress {
+        height: 8px;
+        border-radius: 6px;
+        background: #f0f0f0;
+        overflow: hidden;
+
+        .progress-bar {
+            height: 100%;
+            background: $progress-gradient;
+            transition: width 0.3s ease;
+        }
+    }
+
+    .progress-text {
+        margin-top: 0.25rem;
+        font-size: 0.85rem;
+        text-align: right;
+        color: #444;
+    }
+}

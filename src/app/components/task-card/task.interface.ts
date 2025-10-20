@@ -4,12 +4,18 @@ export interface ITask {
     description: string | null;
     status: ITaskStatusEnum | null;
     priority: ITaskPriorityEnum | null;
-    created_at: string ;
-    updated_at: string | null;
-    deleted_at: string | null;
+    due_date: Date | null;
+    created_at: Date ;
+    updated_at: Date | null;
+    subTasks?: ITask[];
+}
+
+export interface IProjectTask extends ITask {
+    projectIndex: number;
 }
 
 export enum ITaskStatusEnum {
+    BACKLOG = 'BACKLOG',
     TODO = 'TODO',
     IN_PROGRESS = 'IN_PROGRESS',
     DONE = 'DONE'

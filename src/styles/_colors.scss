@@ -6,14 +6,16 @@ $secondary-color: #E9E9E9;
 $black-color: #333333;
 $white-color: #FFFFFF;
 $off-white-color: #fdfcfc;
-$grey-color: #C1C1C1;
+$grey-color: #777;
+$light-grey-color: #E0E0E0;
 
 
-$priority-critical: #FF8A8A;
-$priority-high: #FFB3B3;
-$priority-medium: #E0CCFF;
-$priority-low: #B3B3FF;
-$priority-minimal: #B3D1FF;
- 
+$priority-critical: #DE350B;
+$priority-high: #FFAB00;
+$priority-medium: #2684FF;
+$priority-low: #97A0AF;
+$priority-minimal: #E0E0E0;
 
-$border-color: color.adjust($grey-color, $lightness: 15%);
+$border-color: $light-grey-color;
+
+$progress-gradient: linear-gradient(90deg, #4caf50, #81c784);

@@ -1,0 +1,19 @@
+<div class="create-task__card">
+    <div class="create-task__header">
+        <h3>New Task</h3>
+        <button class="tsk-icon__btn" (click)="toggleNewTaskCard()">
+            <mat-icon>close</mat-icon>
+        </button>
+    </div>
+    <form>
+        <mat-form-field class="" subscriptSizing="dynamic">
+            <mat-label>Task</mat-label>
+            <input matInput #message maxlength="256" placeholder="task">
+        </mat-form-field>
+        <mat-form-field class="" subscriptSizing="dynamic">
+            <mat-label>Description</mat-label>
+            <textarea matInput placeholder="describe the task"></textarea>
+        </mat-form-field>
+        <button matButton="tonal" color="primary">Create Task</button>
+    </form>
+</div>

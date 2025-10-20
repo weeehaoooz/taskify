@@ -1,12 +1,14 @@
 import { Component, input } from '@angular/core';
 import { ITask } from './task.interface';
 import { CommonModule, TitleCasePipe } from '@angular/common';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'tsk-task-card',
   imports: [
     CommonModule,
     TitleCasePipe,
+    MatIconModule
   ],
   templateUrl: './task-card.component.html',
   styleUrl: './task-card.component.scss'
@@ -14,4 +16,8 @@ import { CommonModule, TitleCasePipe } from '@angular/common';
 export class TaskCardComponent {
 
   task = input<ITask>();
+
+  toggleNewTaskCard() {
+    
+  }
 }

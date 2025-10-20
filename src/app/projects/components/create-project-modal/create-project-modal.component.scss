@@ -1,0 +1,21 @@
+@use "colors" as *;
+@use "modals" as *;
+
+.modal__container {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    width: 450px;
+
+    .create-project__header {
+        h2 {
+            color: $primary-color;            
+        }
+    }
+
+    .create-project__form {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+    }
+}

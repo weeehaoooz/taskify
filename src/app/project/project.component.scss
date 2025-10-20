@@ -1,0 +1,54 @@
+@use "colors" as *;
+
+:host {
+  flex: 1;
+}
+
+.project__container {
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - 2rem);
+  padding: 1rem 0;
+  gap: .5rem;
+
+  .project__toolbar {
+    display: flex;
+    flex-direction: row;
+    padding: 0 1rem;
+    gap: .5rem;
+
+    .title__container {
+      display: flex;
+      flex-direction: column;
+      padding: 0 .5em;
+      align-items: flex-start;
+      gap: .5rem;
+
+      h1 {
+        font-size: 2em;
+        font-weight: bolder;
+      }
+
+      .progress {
+        width: 250px;
+        height: 8px;
+        border-radius: 6px;
+        background: #f0f0f0;
+        overflow: hidden;
+
+        .progress-bar {
+          height: 100%;
+          background: $progress-gradient;
+          transition: width 0.3s ease;
+        }
+      }
+    }
+  }
+
+  .project__content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: .5rem;
+  }
+}

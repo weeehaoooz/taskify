@@ -1,0 +1,73 @@
+@use '@angular/material' as mat;
+@use 'colors' as *;
+
+
+// ---------------------
+// Brand Primary Palette
+// ---------------------
+$brand-blue-palette: (
+  50: lighten($primary-color, 45%),
+  100: lighten($primary-color, 35%),
+  200: lighten($primary-color, 25%),
+  300: lighten($primary-color, 15%),
+  400: lighten($primary-color, 5%),
+  500: $primary-color,
+  600: darken($primary-color, 5%),
+  700: darken($primary-color, 10%),
+  800: darken($primary-color, 15%),
+  900: darken($primary-color, 20%),
+  contrast: (
+    50: $black-color,
+    100: $black-color,
+    200: $black-color,
+    300: $black-color,
+    400: $black-color,
+    500: $white-color,
+    600: $white-color,
+    700: $white-color,
+    800: $white-color,
+    900: $white-color
+  )
+);
+
+// ---------------------
+// Accent Palette (Grey)
+// ---------------------
+$brand-grey-palette: (
+  50: lighten($secondary-color, 30%),
+  100: lighten($secondary-color, 20%),
+  200: lighten($secondary-color, 10%),
+  300: $secondary-color,
+  400: darken($secondary-color, 5%),
+  500: darken($secondary-color, 10%),
+  600: darken($secondary-color, 15%),
+  700: darken($secondary-color, 20%),
+  800: darken($secondary-color, 25%),
+  900: darken($secondary-color, 30%),
+  contrast: (
+    50: $black-color,
+    100: $black-color,
+    200: $black-color,
+    300: $black-color,
+    400: $black-color,
+    500: $black-color,
+    600: $white-color,
+    700: $white-color,
+    800: $white-color,
+    900: $white-color
+  )
+);
+// Define your custom palettes using the new M2 APIs
+$custom-primary: mat.m2-define-palette($brand-blue-palette);
+$custom-accent: mat.m2-define-palette($brand-grey-palette);
+$custom-warn: mat.m2-define-palette(mat.$m2-red-palette);
+
+// Define the M2 light theme
+$custom-theme: mat.m2-define-light-theme((color: (primary: $custom-primary,
+                accent: $custom-accent,
+                warn: $custom-warn ),
+            typography: mat.m2-define-typography-config(),
+            density: 0));
+
+// Apply the theme to all components
+@include mat.all-component-themes($custom-theme);

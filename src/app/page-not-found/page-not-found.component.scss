@@ -1,0 +1,40 @@
+@use "colors" as *;
+
+:host {
+    flex: 1;
+}
+
+.not-found-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-color: $white-color;
+
+    .not-found-content {
+        text-align: center;
+
+        h1 {
+            font-size: 6rem;
+            margin: 0;
+            color: $primary-color; // brand primary
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin: 0.5rem 0;
+            color: $black-color;
+        }
+
+        p {
+            color: $grey-color;
+            font-size: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        button {
+            font-size: 1rem;
+            padding: 0.75rem 2rem;
+        }
+    }
+}

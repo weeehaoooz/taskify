@@ -1,0 +1,18 @@
+<ul class="views__nav nav__container">
+    <li [routerLink]="['/project',projectId()]" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+        <mat-icon>space_dashboard</mat-icon>
+        <span>Overview</span>
+    </li>
+    <li [routerLink]="['/project',projectId(),'list']" routerLinkActive="active">
+        <mat-icon>list</mat-icon>
+        <span>List</span>
+    </li>
+    <li [routerLink]="['/project',projectId(),'board']" routerLinkActive="active">
+        <mat-icon>view_kanban</mat-icon>
+        <span>Board</span>
+    </li>
+    <li [routerLink]="['/project',projectId(),'calendar']" routerLinkActive="active">
+        <mat-icon>calendar_month</mat-icon>
+        <span>Calendar</span>
+    </li>
+</ul>

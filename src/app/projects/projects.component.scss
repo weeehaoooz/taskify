@@ -1,0 +1,69 @@
+@use "colors" as *;
+@use "defaults" as *;
+
+:host {
+    flex: 1;
+}
+
+.projects__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    height: 100%;
+
+    .projects__toolbar {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 1em;
+    }
+
+    .projects__grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 1em;
+        padding: 0 1em;
+
+        /* Floating preview while dragging */
+        .cdk-drag-preview {
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+            border-radius: 1rem;
+            transform: scale(1.03);
+            opacity: 0.95;
+            backdrop-filter: blur(4px);
+        }
+
+        /* Placeholder (subtle blur, no border) */
+        .cdk-drag-placeholder {
+            border: none;
+            border-radius: 10px;
+            border: 1px dashed $border-color;
+            backdrop-filter: blur(6px);
+            opacity: 0.6;
+            transform: scale(0.98);
+        }
+
+        /* Animate smooth repositioning */
+        .cdk-drop-list-dragging tsk-project-card:not(.cdk-drag-placeholder) {
+            transition: transform 200ms ease;
+        }
+
+        /* Optional: soften entry animation for the preview */
+        .cdk-drag-preview {
+            animation: lift 0.15s ease-out;
+        }
+
+        @keyframes lift {
+            from {
+                transform: scale(1) translateY(0);
+                opacity: 0.9;
+            }
+
+            to {
+                transform: scale(1.03) translateY(-2px);
+                opacity: 0.95;
+            }
+        }
+    }
+}

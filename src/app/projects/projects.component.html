@@ -1,0 +1,13 @@
+<div class="projects__wrapper">
+    <div class="projects__toolbar">
+        <button matButton="tonal" color="primary" matTooltip="Create Project" (click)="showCreateProject()">
+            <mat-icon>add_circle</mat-icon>
+            <span>Create Project</span>
+        </button>
+    </div>
+    <div class="projects__grid" cdkDropList cdkDropListOrientation="mixed" (cdkDropListDropped)="drop($event)">
+        @for (project of projects(); track project) {
+            <tsk-project-card [project]="project" cdkDrag></tsk-project-card>
+        }
+    </div>
+</div>

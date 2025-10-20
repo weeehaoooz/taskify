@@ -1,0 +1,20 @@
+<div class="project__wrapper board__wrapper">
+    <div class="project__toolbar">
+        <tsk-project-view-nav [projectId]="projectId()"></tsk-project-view-nav>
+        <div class="swimlane-controls__group">
+            <button matIconButton matTooltip="Edit Swimlanes" (click)="createSwimlane()">
+                <mat-icon>add_column_right</mat-icon>
+            </button>
+            <button matIconButton matTooltip="Rearrange Swimlanes" (click)="createSwimlane()">
+                <mat-icon>move_selection_left</mat-icon>
+            </button>
+        </div>
+    </div>
+    <div class="swimlanes__container">
+        @for (swimlane of swimlanes(); track $index) {
+        <tsk-swimlane
+          [swimlane]="swimlane" [connectedTo]="connectedIds(swimlane.id)" (taskMoved)="onTaskMoved($event)">
+        </tsk-swimlane>
+        }
+    </div>
+</div>

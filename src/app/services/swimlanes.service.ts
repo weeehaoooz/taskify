@@ -11,17 +11,17 @@ export class SwimlanesService {
 
   private sampleSwimlanes = [
     {
-      id: "1",
+      id: "todo",
       title: 'To Do',
       criteria: ITaskStatusEnum.TODO
     },
     {
-      id: "2",
+      id: "in-progress",
       title: 'In Progress',
       criteria: ITaskStatusEnum.IN_PROGRESS
     },
     {
-      id: "3",
+      id: "done",
       title: 'Done',
       criteria: ITaskStatusEnum.DONE
     }

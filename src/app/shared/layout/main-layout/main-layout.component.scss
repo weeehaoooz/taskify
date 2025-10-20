@@ -1,11 +1,11 @@
-@use 'colors';
+@use 'colors' as *;
 
 .main__layout {
     display: flex;
     flex-direction: column;
     width: 100vw;
     height: 100vh;
-    background-color: colors.$white-color;
+    background-color: $off-white-color;
     
     .main__content {
         display: flex;

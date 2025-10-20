@@ -1,0 +1,42 @@
+@use "colors" as *;
+
+.nav__container {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: .5rem;
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 6px;
+    font-weight: 500;
+    color: $grey-color;
+    transition: background-color 0.3s ease, color 0.3s ease;
+
+    mat-icon {
+      font-size: 20px;
+    }
+
+    &:hover {
+      background-color: rgba(42, 153, 244, 0.1); // brand primary with alpha
+      color: $primary-color;
+    }
+
+    &.active {
+      color: $primary-color;
+      font-weight: bold;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      border-bottom: 2px solid $primary-color;
+
+      mat-icon {
+        color: $primary-color;
+      }
+    }
+  }
+}

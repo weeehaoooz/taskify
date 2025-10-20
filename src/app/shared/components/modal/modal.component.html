@@ -1,0 +1,16 @@
+<div class="modal__wrapper">
+    @if(backdrop()) {
+        <div class="backdrop" (click)="closeModal()">
+            @if(!full()) {
+                <button matIconButton class="close-btn" (click)="closeModal()">
+                    <mat-icon>close</mat-icon>
+                </button>
+            }
+        </div>
+    }
+    <div class="modal" [ngClass]="{'full': full()}">
+        <div class="modal__body">
+            <ng-content></ng-content>
+        </div>
+    </div>
+</div>

@@ -1,14 +1,13 @@
 @use "colors" as *;
 @use "defaults" as *;
 
-
 .task__card { 
     display: flex;
     flex-direction: column;
     background-color: $white-color;
     padding: .8em;
     border: $border;
-    gap: .5em;
+    gap: .8em;
     border-radius: .2em;
 
     .task__header {
@@ -24,12 +23,14 @@
             margin: 0;
         }
 
-        .priority__icon {
+        .priority__status {
             display: block;
-            width: 1em;
-            aspect-ratio: 1/1;
-            border-radius: 50%;
+            padding: .15em .65em;
+            border-radius: .8em;
+            font-size: .8em;
             background-color: $primary-color;
+            color: $white-color;
+            text-transform: uppercase;
 
             &.critical {
                 background-color: $priority-critical;
@@ -46,19 +47,42 @@
             &.low {
                 background-color: $priority-low;
             }
-
-            &.minimal {
-                background-color: $priority-minimal;
-            }
         }
     }
 
     .task__body {
+        display: flex;
+        flex-direction: column;
         padding: 0;
         margin: 0;
+        gap: .65em;
 
         p {
           font-size: .9em;
+        }
+
+        .sub-tasks__container {
+            display: flex;
+            flex-direction: column;
+            gap: .2em;
+
+            .sub-tasks__header {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+
+                h4 {
+                    font-size: .85em;
+                    text-transform: uppercase;
+                }
+            }
+
+            .sub-tasks__body {
+                display: flex;
+                flex-direction: column;
+                gap: .2em;
+            }
         }
     }
 

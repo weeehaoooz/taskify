@@ -1,0 +1,13 @@
+<div class="project__container">
+    <div class="project__toolbar">
+        <div class="title__container">
+            <h1>{{project()?.name | titlecase}}</h1>
+            <div class="progress">
+                <div class="progress-bar" [style.width.%]="completionPercentage()"></div>
+            </div>
+        </div>
+    </div>
+    <div class="project__content">
+        <router-outlet></router-outlet>
+    </div>
+</div>
